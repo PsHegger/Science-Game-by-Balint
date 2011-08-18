@@ -75,16 +75,13 @@ public class ScienceActivity extends Activity {
 		} while(conflict);
 		do {
 			rules[2] = new Rule(false);
-			conflict = rules[2].conflict(rules[0]);
-			if (conflict) break;
+			if (rules[2].conflict(rules[0])) break;
 			conflict = rules[2].conflict(rules[1]);
 		} while(conflict);
 		do {
 			rules[3] = new Rule(false);
-			conflict = rules[3].conflict(rules[0]);
-			if (conflict) break;
-			conflict = rules[3].conflict(rules[1]);
-			if (conflict) break;
+			if (rules[3].conflict(rules[0])) break;
+			if (rules[3].conflict(rules[1])) break;
 			conflict = rules[3].conflict(rules[2]);
 		} while(conflict);
 	}
