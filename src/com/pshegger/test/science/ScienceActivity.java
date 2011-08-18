@@ -12,6 +12,7 @@ public class ScienceActivity extends Activity {
 	public static final int MENU_NEW_RULES = 0;
 	public static final int MENU_HISTORY = MENU_NEW_RULES + 1;
 	
+	private Rule[] rules;
 	private RadioGroup szin, szam, forma, kitoltes;
 	
     /** Called when the activity is first created. */
@@ -33,6 +34,8 @@ public class ScienceActivity extends Activity {
         this.szam = (RadioGroup) findViewById(R.id.szam);
         this.forma = (RadioGroup) findViewById(R.id.forma);
         this.kitoltes = (RadioGroup) findViewById(R.id.kitoltes);
+        
+        reset();
     }
 
 	@Override
@@ -61,7 +64,29 @@ public class ScienceActivity extends Activity {
 	}
 
 	private void reset() {
+		rules = new Rule[4];
 		
+		rules[0] = new Rule(true);
+		
+		boolean conflict = false;
+		do {
+			rules[1] = new Rule(false);
+			conflict = rules[1].conflict(rules[0]);
+		} while(conflict);
+		do {
+			rules[2] = new Rule(false);
+			conflict = rules[2].conflict(rules[0]);
+			if (conflict) break;
+			conflict = rules[2].conflict(rules[1]);
+		} while(conflict);
+		do {
+			rules[3] = new Rule(false);
+			conflict = rules[3].conflict(rules[0]);
+			if (conflict) break;
+			conflict = rules[3].conflict(rules[1]);
+			if (conflict) break;
+			conflict = rules[3].conflict(rules[2]);
+		} while(conflict);
 	}
 
 	private void check() {
