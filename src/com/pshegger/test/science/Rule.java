@@ -35,6 +35,10 @@ public class Rule {
 		return this.rule;
 	}
 	
+	public boolean check(Rule other) {
+		return (other.toString().equalsIgnoreCase(toString()));
+	}
+	
 	public boolean conflict(Rule other) {
 		boolean conflict = false;
 		int[] otherRule = other.getRule();
@@ -57,7 +61,6 @@ public class Rule {
 				count[i]++;
 		}
 		boolean sameTwo = false;
-		boolean countTwo = false;
 		int i = 0;
 		while (i < same.length || !sameTwo) {
 			if (same[i] == 2) {
