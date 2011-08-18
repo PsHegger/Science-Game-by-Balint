@@ -2,6 +2,7 @@ package com.pshegger.test.science;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 public class ScienceActivity extends Activity {
 	public static final int MENU_NEW_RULES = 0;
 	public static final int MENU_HISTORY = MENU_NEW_RULES + 1;
+	public static final int MENU_SHOW_RULES = MENU_HISTORY + 1;
 	
 	private Rule[] rules;
 	private RadioGroup szinGrp, szamGrp, formaGrp, kitoltesGrp;
@@ -44,6 +46,7 @@ public class ScienceActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, MENU_NEW_RULES, 0, "Új szabályok");
 		// menu.add(0, MENU_HISTORY, 0, "Előzmények");
+		menu.add(0, MENU_SHOW_RULES, 0, "Szabályok megtekintése");
 		
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -57,8 +60,26 @@ public class ScienceActivity extends Activity {
 		case MENU_HISTORY:
 			showHistory();
 			return true;
+		case MENU_SHOW_RULES:
+			showRules();
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	private void showRules() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Szabályok");
+		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		builder.setMessage(this.rules[0].toHumanForm()+"\n"+this.rules[1].toHumanForm()+"\n"+this.rules[2].toHumanForm()+"\n"+this.rules[3].toHumanForm());
+		AlertDialog alert = builder.create();
+		alert.show();
 	}
 
 	private void showHistory() {
@@ -70,22 +91,15 @@ public class ScienceActivity extends Activity {
 		
 		this.rules[0] = new Rule(true);
 		
-		boolean conflict = false;
 		do {
 			this.rules[1] = new Rule(false);
-			conflict = this.rules[1].conflict(this.rules[0]);
-		} while(conflict);
+		} while(this.rules[1].conflict(this.rules[0]));
 		do {
 			this.rules[2] = new Rule(false);
-			if (this.rules[2].conflict(this.rules[0])) break;
-			conflict = this.rules[2].conflict(this.rules[1]);
-		} while(conflict);
+		} while(this.rules[2].conflict(this.rules[0]) || this.rules[2].conflict(this.rules[1]));
 		do {
 			this.rules[3] = new Rule(false);
-			if (this.rules[3].conflict(this.rules[0])) break;
-			if (this.rules[3].conflict(this.rules[1])) break;
-			conflict = this.rules[3].conflict(this.rules[2]);
-		} while(conflict);
+		} while(this.rules[3].conflict(this.rules[0]) || this.rules[3].conflict(this.rules[1]) || this.rules[3].conflict(this.rules[2]));
 		
 		Log.d("Science", this.rules[0].toString());
 		Log.d("Science", this.rules[1].toString());
@@ -155,13 +169,23 @@ public class ScienceActivity extends Activity {
 				bang = true;
 		}
 		
+		Log.d("Science", guess.toString());
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Kísérlet");
+		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		
 		if (bang) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setMessage("Felrobbant");
 			AlertDialog alert = builder.create();
 			alert.show();
 		}else{
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setMessage("Stabill");
 			AlertDialog alert = builder.create();
 			alert.show();
