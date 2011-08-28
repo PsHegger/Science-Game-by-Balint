@@ -182,11 +182,11 @@ public class ScienceActivity extends Activity {
 		});
 		
 		if (bang) {
-			builder.setMessage("Felrobbant");
+			builder.setMessage("Él!");
 			AlertDialog alert = builder.create();
 			alert.show();
 		}else{
-			builder.setMessage("Stabill");
+			builder.setMessage("Életképtelen");
 			AlertDialog alert = builder.create();
 			alert.show();
 		}

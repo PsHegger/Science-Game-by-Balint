@@ -113,35 +113,35 @@ public class Rule {
 		int kitoltes = this.rule[Constants.RULE_KITOLTES];
 		
 		if (szam == Constants.SZAM_EGY)
-			builder.append("egy");
+			builder.append("szőrös");
 		else if (szam == Constants.SZAM_KETTO)
-			builder.append("kettő");
+			builder.append("pikkelyes");
 		else if (szam == Constants.SZAM_HAROM)
-			builder.append("Három");
+			builder.append("tollas");
 		builder.append(";");
 		
 		if (szin == Constants.SZIN_PIROS)
-			builder.append("piros");
+			builder.append("növényevő");
 		else if (szin == Constants.SZIN_KEK)
-			builder.append("kék");
+			builder.append("ragadozó");
 		else if (szin == Constants.SZIN_ZOLD)
-			builder.append("zöld");
+			builder.append("mindenevő");
 		builder.append(";");
 		
 		if (kitoltes == Constants.KITOLTES_CSIKOS)
-			builder.append("csíkos");
+			builder.append("cincog");
 		else if (kitoltes == Constants.KITOLTES_POTTYOS)
-			builder.append("pöttyös");
+			builder.append("vonyít");
 		else if (kitoltes == Constants.KITOLTES_URES)
-			builder.append("üres");
+			builder.append("béget");
 		builder.append(";");
 		
 		if (forma == Constants.FORMA_HAROMSZOG)
-			builder.append("háromszög");
+			builder.append("fut");
 		else if (forma == Constants.FORMA_KOR)
-			builder.append("kör");
+			builder.append("gurul");
 		else if (forma == Constants.FORMA_NEGYZET)
-			builder.append("négyzet");
+			builder.append("úszik");
 		
 		return builder.toString();
 	}

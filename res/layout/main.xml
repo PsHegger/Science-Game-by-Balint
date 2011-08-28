@@ -5,34 +5,34 @@
     <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="fill_parent" android:layout_gravity="top">
         <TableRow android:id="@+id/tableRow1" android:gravity="center_horizontal" android:layout_height="wrap_content" android:baselineAligned="true" android:layout_gravity="fill" android:layout_width="fill_parent">
             <RadioGroup android:id="@+id/szam" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="top" android:layout_weight="1">
-                <TextView android:text="Szám" android:id="@+id/textView2" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
-            	<RadioButton android:layout_height="wrap_content" android:text="1" android:checked="true" android:layout_width="0dp" android:id="@+id/egy" android:layout_gravity="top" android:layout_weight="1"></RadioButton>
-                <RadioButton android:layout_height="wrap_content" android:text="2" android:layout_width="0dp" android:id="@+id/ketto" android:layout_gravity="top" android:layout_weight="1"></RadioButton>
-                <RadioButton android:layout_height="wrap_content" android:text="3" android:layout_width="0dp" android:id="@+id/harom" android:layout_gravity="top" android:layout_weight="1"></RadioButton>
+                <TextView android:text="Kültakaró" android:id="@+id/textView2" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
+            	<RadioButton android:layout_height="wrap_content" android:text="Szőrös" android:checked="true" android:layout_width="0dp" android:id="@+id/egy" android:layout_gravity="top" android:layout_weight="1"></RadioButton>
+                <RadioButton android:layout_height="wrap_content" android:text="Pikkelyes" android:layout_width="0dp" android:id="@+id/ketto" android:layout_gravity="top" android:layout_weight="1"></RadioButton>
+                <RadioButton android:layout_height="wrap_content" android:text="Tollas" android:layout_width="0dp" android:id="@+id/harom" android:layout_gravity="top" android:layout_weight="1"></RadioButton>
             </RadioGroup>
         </TableRow>
         <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_horizontal">
             <RadioGroup android:orientation="horizontal" android:id="@+id/szin" android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="0dp" android:layout_gravity="center">
-                <TextView android:text="Szín" android:id="@+id/textView1" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
-                <RadioButton android:id="@+id/piros" android:layout_height="wrap_content" android:text="Piros" android:checked="true" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
-                <RadioButton android:id="@+id/zold" android:layout_height="wrap_content" android:text="Zöld" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
-                <RadioButton android:id="@+id/kek" android:layout_height="wrap_content" android:text="Kék" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <TextView android:text="Táplálkozás" android:id="@+id/textView1" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
+                <RadioButton android:id="@+id/piros" android:layout_height="wrap_content" android:text="Növényevő" android:checked="true" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <RadioButton android:id="@+id/zold" android:layout_height="wrap_content" android:text="Ragadozó" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <RadioButton android:id="@+id/kek" android:layout_height="wrap_content" android:text="Mindenevő" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
             </RadioGroup>
         </TableRow>
         <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_horizontal">
 			<RadioGroup android:id="@+id/kitoltes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="top" android:layout_weight="1">
-            <TextView android:text="Kitöltés" android:id="@+id/textView4" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
-                <RadioButton android:id="@+id/ures" android:layout_height="wrap_content" android:text="Üres" android:checked="true" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
-                <RadioButton android:id="@+id/csikos" android:layout_height="wrap_content" android:text="Csíkos" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
-                <RadioButton android:id="@+id/pottyos" android:layout_height="wrap_content" android:text="Pöttyös" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+            <TextView android:text="Hang" android:id="@+id/textView4" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
+                <RadioButton android:id="@+id/ures" android:layout_height="wrap_content" android:text="Cincog" android:checked="true" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <RadioButton android:id="@+id/csikos" android:layout_height="wrap_content" android:text="Vonyít" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <RadioButton android:id="@+id/pottyos" android:layout_height="wrap_content" android:text="Béget" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
             </RadioGroup>
         </TableRow>
         <TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_horizontal">
         	<RadioGroup android:id="@+id/forma" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="top" android:layout_weight="1">
-            <TextView android:text="Forma" android:id="@+id/textView3" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
-                <RadioButton android:id="@+id/haromszog" android:layout_height="wrap_content" android:text="Háromszög" android:checked="true" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
-                <RadioButton android:id="@+id/kor" android:layout_height="wrap_content" android:text="Kör" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
-                <RadioButton android:id="@+id/negyzet" android:layout_height="wrap_content" android:text="Négyzet" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+            <TextView android:text="Mozgás" android:id="@+id/textView3" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="0.6"></TextView>
+                <RadioButton android:id="@+id/haromszog" android:layout_height="wrap_content" android:text="Fut" android:checked="true" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <RadioButton android:id="@+id/kor" android:layout_height="wrap_content" android:text="Gurul" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
+                <RadioButton android:id="@+id/negyzet" android:layout_height="wrap_content" android:text="Úszik" android:layout_weight="1" android:layout_width="0dp"></RadioButton>
             </RadioGroup>
         </TableRow>
     </TableLayout>
