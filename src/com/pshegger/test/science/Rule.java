@@ -123,17 +123,17 @@ public class Rule {
 		if (szin == Constants.SZIN_PIROS)
 			builder.append("növényevő");
 		else if (szin == Constants.SZIN_KEK)
-			builder.append("ragadozó");
-		else if (szin == Constants.SZIN_ZOLD)
 			builder.append("mindenevő");
+		else if (szin == Constants.SZIN_ZOLD)
+			builder.append("ragadozó");
 		builder.append(";");
 		
 		if (kitoltes == Constants.KITOLTES_CSIKOS)
-			builder.append("cincog");
-		else if (kitoltes == Constants.KITOLTES_POTTYOS)
 			builder.append("vonyít");
-		else if (kitoltes == Constants.KITOLTES_URES)
+		else if (kitoltes == Constants.KITOLTES_POTTYOS)
 			builder.append("béget");
+		else if (kitoltes == Constants.KITOLTES_URES)
+			builder.append("cincog");
 		builder.append(";");
 		
 		if (forma == Constants.FORMA_HAROMSZOG)
